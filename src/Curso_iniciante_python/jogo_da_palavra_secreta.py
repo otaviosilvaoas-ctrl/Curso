@@ -24,7 +24,7 @@ for carcter in palavra_secreta:
     else:
         num_caracteres += ' '
 
-while tentativas <= 7:
+while palavra_secreta != num_caracteres:
     
     digito = input("Digite uma letra: ").lower()
 
@@ -34,6 +34,7 @@ while tentativas <= 7:
                 num_caracteres = num_caracteres[:index] + digito + num_caracteres[index + 1:]
 
         print(num_caracteres)
+        print(f'Você já fez {tentativas} tentativas.')
         tentativas += 1
     else:
          
