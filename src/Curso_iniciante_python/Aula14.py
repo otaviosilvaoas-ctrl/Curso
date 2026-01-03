@@ -17,6 +17,6 @@ print(_)
 
 
 # ------------- Tuplas -------------------
-
-dados1 = 'Otávio Augusto', 'Masculino', 23, '90 Kg'
+# Tuplas são imutaveis, não e possivel realizar alterações no tipo tupla
+dados1 = ('Otávio Augusto', 'Masculino', 23, '90 Kg')
 print(dados1[-1]) 
