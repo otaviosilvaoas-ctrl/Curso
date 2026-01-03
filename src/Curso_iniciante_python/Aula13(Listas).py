@@ -79,8 +79,20 @@ Concatenar listas
 
 lista_a = [1, 2, 3]
 lista_b = [4, 5, 6]
+lista_a
 
 lista_c = lista_a + lista_b  # Create (Criar) -> Cria uma nova lista concatenando lista_a e lista_b
 lista_a.extend(lista_b)  # Update (Atualizar) -> Adiciona os itens de lista_b ao final de lista_a
 print(lista_a)
 print(lista_c)
+
+
+
+"""
+for com o tipo list 
+"""
+
+lista = ["Otávio", "Maria", "Hellena"]
+
+for nome in lista:
+    print(nome)
