@@ -26,7 +26,11 @@ print(resultado)
 
 # Crie uma função que fala se o número é par ou ímpar. Retorne se o número é par ou ímpar
 
-def paridade(*args1):
-    ...
-    
+def paridade(num):
+    verificador = "par" if num%2==0 else "impar"
+    return verificador
 
+verificador = 1, 5, 8, 6, 10
+
+for index in verificador:
+    print(index, '-', paridade(index))
