@@ -48,3 +48,28 @@ def soma_2(x, y, z=None):
 soma_2(10, 20)
 soma_2(10, 20, 30)
 
+"""
+args - Argumentos não nomeados
+* - *args(empacotamento e desempacotamento) 
+"""
+
+# Lembre-se de desempacotamento
+
+valor_teste_1, valor_teste_2, *resto_teste = 1, 2, 3, 4
+print(valor_teste_1, valor_teste_2, resto_teste)
+
+
+def soma(*args):
+    
+    total = 0
+    for teste_numeros in args:
+        total += teste_numeros
+    return total
+
+valor_total_somado = soma(0, 1, 2, 3, 4, 5, 6, 7)
+print(valor_total_somado)
+
+# Função soma pronta
+
+numero = 0, 1, 2, 3, 4, 5, 6, 7
+print(sum(numero))
