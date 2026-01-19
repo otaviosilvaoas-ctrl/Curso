@@ -1,15 +1,17 @@
 # Sistema de perguntas e respostas
 
+import os 
+
 perguntas = [
 
     {
-        'Pergunta': 'Quem descobriu o Brasil ?',
+        'pergunta': 'Quem descobriu o Brasil ?',
         'alternativa': ['João Abrel', 'Felipe Auguto', 'Neymar Santo', 'Pedro Alvares Cabral'],
         'resposta': 'Pedro Alvares Cabral',
     },
 
     {
-        'Pergunta': 'Quantos dias tem um ano ?',
+        'pergunta': 'Quantos dias tem um ano ?',
         'alternativa': [368, 369, 365, 364],
         'resposta': 365
     },
@@ -22,23 +24,42 @@ perguntas = [
 
 ]
 
-opcao = int(input('1 - Jogar\n2 - Sair\nSelecione uma opção: '))
 
-if opcao != 1 and opcao != 2:
-    print('\nPor favor digite uma opção valida !')
+def jogar(lista_de_perguntas, pontos):
 
-if opcao == 1:
-    
-    for questao in perguntas:
-        print(f'\n{questao.get('Pergunta')}')
-
-        for index, alternativa in enumerate(questao.get('alternativa')):
-            print(f'{index}) {alternativa}.')
+    for index, questao in enumerate(lista_de_perguntas):
         
-        opcao_de_resposta = input("Selecione uma alternativa: ")
+        print(questao.get('pergunta'))
+        
+        for i, opcao in enumerate(questao['alternativa']):
+            print(f'{i} - {opcao}')
+        
+        opcao_selecionada = int(input('Indique a opção correta: '))
 
-        ...
 
+        if questao['resposta'] == questao['alternativa'][opcao_selecionada]:
+            os.system('cls')
+            pontos += 1
+            print('Resposta correta !!')
+
+        print(f'{pontos} / {len(lista_de_perguntas)} respondidas corretamente !! \n')
+    
+    return pontos
+
+
+
+usuario = input('Digite o seu nome de usuário: ')
+
+print(f'Bem Vindo {usuario}')
+pontos = 0
+
+contabilizador_de_pontos = jogar(perguntas, pontos)
+print(contabilizador_de_pontos)
+
+
+
+
+        
 
 
         
