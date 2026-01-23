@@ -25,22 +25,30 @@ perguntas = [
 ]
 
 
+'''
+A função vare a lista de dicionarios que contém as perguntas e depois as exibe 
+recebendo do usuário sua escolha, e contabilizando os pontos atingidos do usuário até o momento 
+a função ainda requer tratamento de erros e aceitar somente alternativas validas respondidas pelo
+usuário.
+'''
 def jogar(lista_de_perguntas, pontos):
 
-    for index, questao in enumerate(lista_de_perguntas):
-        
-        print(questao.get('pergunta'))
+    for index, questao in enumerate(lista_de_perguntas): 
+        print(questao['pergunta'])
         
         for i, opcao in enumerate(questao['alternativa']):
-            print(f'{i} - {opcao}')
+            print(f'{i}) - {opcao}')
         
         opcao_selecionada = int(input('Indique a opção correta: '))
-
 
         if questao['resposta'] == questao['alternativa'][opcao_selecionada]:
             os.system('cls')
             pontos += 1
             print('Resposta correta !!')
+
+        else:
+            os.system('cls')
+            print('Resposta errada !')
 
         print(f'{pontos} / {len(lista_de_perguntas)} respondidas corretamente !! \n')
     
