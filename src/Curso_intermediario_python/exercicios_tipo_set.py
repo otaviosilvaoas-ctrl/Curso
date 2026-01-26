@@ -26,6 +26,8 @@ lista_de_listas_de_inteiros = [
     [10, 9, 8, 7, 6, 5, 4, 3, 2, 1], # -1
 ]
 
+
+# ------------------------------- Primeira solução -------------------------------
 def encontra_duplicado(lista):
     retorno_das_listas = []
     numeros_vistos = []
@@ -33,10 +35,13 @@ def encontra_duplicado(lista):
     for lista_interna in lista:
         tupla_interna = tuple(lista_interna)
         numeros_vistos.clear()
+
         for index, numero in enumerate(tupla_interna):
+
             if numeros_vistos and (numero in numeros_vistos):
                 retorno_das_listas.append(numero)
                 break
+
             numeros_vistos.append(numero)
 
             if index == len(tupla_interna) - 1:
@@ -52,3 +57,26 @@ for valor in lista_de_retorno:
 lisy = [-1, 9, 2, 8, 8, 2, 2, 1, 1, 2, 5, -1]  
 
 print(lisy == lista_de_retorno)
+# ----------------------------------------------------------------------------------------
+
+
+
+
+# ------------------------------- Segunda solução -------------------------------
+
+def encontra_duplicado_v2(lista):
+    numeros_vistos = set()
+    valores_retorno = -1
+
+    for numero in lista:
+        if numero in numeros_vistos:
+            valores_retorno = numero
+            break
+        numeros_vistos.add(numero)
+
+    return valores_retorno
+
+for listas_internas in lista_de_listas_de_inteiros:
+    print(encontra_duplicado_v2(listas_internas))
+# ----------------------------------------------------------------------------------------
+
